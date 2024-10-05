@@ -15,7 +15,7 @@ export class AppComponent implements DoCheck {
   isadmin = false;
   ngDoCheck(): void {
     const currentroute = this.route.url;
-    if (currentroute == '/login' || currentroute == '/access/register') {
+    if (currentroute == '/login' || currentroute == '/access/register'  || localStorage.getItem('token') == null) {
       this.isMenuVisible = false
     } else {
       this.isMenuVisible = true
